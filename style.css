@@ -10,6 +10,8 @@
     --accent-2: #6d5cff;
     --success: #14c86e;
     --danger: #ff2d2d;
+    --limpar:#ff4d12;
+  
 }
 
 body.modo-escuro {
@@ -230,6 +232,42 @@ body.modo-escuro .botao-principal {
     border-color: var(--border-strong);
 }
 
+.botao-limpar {
+    width: calc(100% + 52px); /* quebra o padding de 26px de cada lado */
+    height: 56px;
+    margin-left: -26px;
+    margin-right: -26px;
+    margin-bottom: -20px;
+    margin-top: 22px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  
+    background: var(--bg);
+    color: var(--text);
+    border: none;
+    border-top: 1.5px solid var(--border-strong);
+    border-radius: 0 0 32px 32px;
+  
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  
+  .botao-limpar:hover {
+    background: var(--limpar);
+    color: #fff;
+  }
+  
+  /* Garante que o card não vaze */
+  .cartao-aplicacao {
+    overflow: hidden;
+  }
+
 .rodape-aplicacao {
     margin-top: 22px;
     padding-top: 16px;
@@ -322,7 +360,6 @@ body.modo-escuro .botao-principal {
     margin-top: 2px;
   }
   
-  /* Se quiser ele dentro do card, e não flutuando */
   .cartao-aplicacao .footer-dev {
     position: relative;
     bottom: auto;
@@ -333,3 +370,51 @@ body.modo-escuro .botao-principal {
     width: 100%;
     border-radius: 18px;
   }
+
+  /* FILTROS */
+.filtros {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    background: var(--bg);
+    padding: 4px;
+    border-radius: 12px;
+    border: 1.5px solid var(--border);
+}
+.filtro {
+    flex: 1;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--text-soft);
+    transition: all .2s;
+}
+.filtro.ativo {
+    background: var(--card);
+    color: var(--text);
+    border: 1.5px solid var(--border-strong);
+    box-shadow: 2px 2px 0 var(--border-strong);
+}
+.filtro:hover:not(.ativo) { color: var(--text); }
+
+/* EDIÇÃO */
+.item-tarefa.editando {
+    border-color: var(--accent);
+    box-shadow: 4px 4px 0 var(--border-strong);
+    transform: translate(-2px, -2px);
+}
+.input-edicao {
+    flex: 1;
+    height: 36px;
+    padding: 0 12px;
+    border: 1.5px solid var(--border-strong);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    outline: none;
+}
+

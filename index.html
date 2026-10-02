@@ -10,32 +10,41 @@
 <body>
     <div class="cartao-aplicacao">
         <header class="cabecalho-aplicacao">
-            <h1>Minhas Tarefas</h1>
-            <button id="botao-tema" class="botao-principal">
-                <i class="fa-solid fa-moon"></i>
-            </button>
+            <h1>Minhas Tarefas <span>organize seu dia</span></h1>
+            <div style="display:flex; gap:8px">
+                <button id="botao-rfs" class="botao-icone">
+                    <i class="fa-solid fa-circle-question"></i>
+                </button>
+                <button id="botao-tema" class="botao-icone">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
         </header>
         <div class="caixa-entrada">
-            <input type="text" id="campo-tarefa" placeholder="O que vamos fazer hoje?..." maxlength="40">
-            <button id="botao-adicionar" class="botao-principal"> 
-                <i class="fa-solid fa-plus"></i> Adicionar
-            </button>
+            <input type="text" id="campo-tarefa" placeholder="O que vamos fazer hoje?...">
+            <button id="botao-adicionar" class="botao-principal">Adicionar</button>
         </div>
-        <ul id="lista-tarefas" class="lista-tarefas">
-            <!-- As tarefas serão inseridas aqui dinamicamente via JS -->
-        </ul>
+
+        <!-- FILTROS NOVOS -->
+        <div class="filtros" id="filtros">
+            <button data-filtro="todas" class="filtro ativo">Todas</button>
+            <button data-filtro="pendentes" class="filtro">Pendentes</button>
+            <button data-filtro="concluidas" class="filtro">Concluídas</button>
+        </div>
+    
+        <ul id="lista-tarefas" class="lista-tarefas"></ul>
+        
         <footer class="rodape-aplicacao">
-            <span id="contador-tarefas">0 tarefas na lista</span>
-            
-                <div class="footer-dev__foto">
-                  <img src="IMG_1031.jpg" alt="Arthur Perussolo">
-                </div>
-                <div class="footer-dev__info">
-                  <span>Desenvolvido por</span>
-                  <strong>Arthur Perussolo</strong>
-                </div>
-              
+            <span id="contador-tarefas">0 tarefas</span>
+            <div style="display:flex; align-items:center; gap:8px">
+                <div class="footer-dev__foto"><img src="pequenino.JPG" alt=""></div>
+                <div class="footer-dev__info"><span>Desenvolvido por</span><strong>Arthur Perussolo</strong></div>
+            </div>
         </footer>
+        
+        <button id="botao-limpar" class="botao-limpar"> 
+            <i class="fa-solid fa-trash-can"></i> Limpar Tudo
+        </button>
     </div>
     <script src="script.js"></script>
 </body>
